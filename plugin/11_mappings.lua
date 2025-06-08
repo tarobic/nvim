@@ -167,13 +167,14 @@ nmap_leader('rt', '<Cmd>T devtools::test()<CR>',                    'Test')
 xmap_leader('rx', '"+y :T reprex::reprex()<CR>',                    'Reprex selection')
 
 -- s is for 'send' (Send text to neoterm buffer)
-nmap_leader('s', '<Cmd>TREPLSendLine<CR>j', 'Send to terminal')
+-- nmap_leader('s', '<Cmd>TREPLSendLine<CR>j', 'Send to terminal')
 
 -- - In simple visual mode send text and move to the last character in
 --   selection and move to the right. Otherwise (like in line or block visual
 --   mode) send text and move one line down from bottom of selection.
-local send_selection_cmd = [[mode() ==# "v" ? ":TREPLSendSelection<CR>`>l" : ":TREPLSendSelection<CR>'>j"]]
-xmap_leader('s', send_selection_cmd, 'Send to terminal', { expr = true })
+-- local send_selection_cmd = [[mode() ==# "v" ? ":TREPLSendSelection<CR>`>l" : ":TREPLSendSelection<CR>'>j"]]
+-- xmap_leader('s', send_selection_cmd, 'Send to terminal', { expr = true })
+nmap_leader("sj", "<Cmd>lua MiniSplitjoin.toggle()<CR>", "Splitjoin toggle")
 
 -- t is for 'terminal' (uses 'neoterm') and 'minitest'
 nmap_leader('ta', '<Cmd>lua MiniTest.run()<CR>',                       'Test run all')
@@ -212,4 +213,5 @@ map_pick_core('vC', nil, 'Core visits (cwd)')
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Windows" })
+nmap_leader("a", "<Cmd>AutoRunLua<Cr>", "AutoRunLua")
 -- stylua: ignore end

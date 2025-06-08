@@ -194,7 +194,7 @@ end)
 
 later(function() require('mini.align').setup() end)
 
-later(function() require('mini.animate').setup({ cursor = { enable = false }, scroll = { enable = false } }) end)
+-- later(function() require('mini.animate').setup({ cursor = { enable = false }, scroll = { enable = false } }) end)
 
 later(function() require('mini.bracketed').setup() end)
 

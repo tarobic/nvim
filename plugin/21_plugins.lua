@@ -71,14 +71,9 @@ later(function()
   -- All language servers are expected to be installed with 'mason.vnim'
   vim.lsp.enable({
     'clangd',
-    'emmet_ls',
-    'gopls',
-    'intelephense',
     'lua_ls',
     'pyright',
-    'r_language_server',
     'rust_analyzer',
-    'ts_ls',
   })
 end)
 
@@ -197,7 +192,7 @@ end)
 --   add('Shatur/neovim-ayu')
 -- end)
 
-now(
+later(
   function()
     add({
       source = 'nvzone/typr',

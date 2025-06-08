@@ -6,6 +6,7 @@ vim.g.mapleader = ' '
 vim.o.switchbuf    = 'usetab'       -- Use already opened buffers when switching
 vim.o.shada        = "'100,<50,s10,:1000,/100,@100,h" -- Limit what is stored in ShaDa file
 vim.o.scrolloff = 5
+vim.o.confirm = true
 
 -- UI =========================================================================
 vim.o.colorcolumn   = '+1'      -- Draw colored column one step to the right of desired maximum width

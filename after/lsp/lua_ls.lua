@@ -10,7 +10,7 @@ vim.lsp.config.lua_ls = {
   end,
   settings = {
     Lua = {
-      runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
+      -- runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
       diagnostics = {
         -- Don't analyze whole workspace, as it consumes too much CPU and RAM
         workspaceDelay = -1,
