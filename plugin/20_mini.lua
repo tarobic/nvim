@@ -14,10 +14,8 @@ now(function() vim.cmd('colorscheme minispring') end)
 
 now(function()
   require('mini.basics').setup({
-    -- Manage options manually in a spirit of transparency
-    options = { basic = false },
+    options = { basic = true },
     mappings = { windows = true, move_with_alt = true },
-    autocommands = { relnum_in_visual_mode = true },
   })
 end)
 
@@ -46,7 +44,38 @@ end)
 
 now(function() require('mini.sessions').setup() end)
 
-now(function() require('mini.starter').setup() end)
+local starter = require('mini.starter')
+starter.setup({
+  evaluate_single = true,
+  header = table.concat({
+    [[  /\ \▔\___  ___/\   /(●)_ __ ___  ]],
+    [[ /  \/ / _ \/ _ \ \ / / | '_ ` _ \ ]],
+    [[/ /\  /  __/ (_) \ V /| | | | | | |]],
+    [[\_\ \/ \___|\___/ \_/ |_|_| |_| |_|]],
+    [[───────────────────────────────────]],
+  }, '\n'),
+  footer = os.date(),
+  content_hooks = {
+    starter.gen_hook.adding_bullet(),
+    starter.gen_hook.aligning('center', 'center'),
+  },
+  query_updaters = [[abcdefghilmoqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMOQRSTUVWXYZ]],
+  items = {
+    { action = 'che', name = 'Health', section = 'Bonus' },
+    {
+      action = ':lua Snacks.lazygit()',
+      name = 'Git',
+      section = 'Bonus',
+    },
+    { action = ':Typr', name = 'Typr', section = 'Bonus' },
+    { action = ':TyprStats', name = 'Typr Stats', section = 'Bonus' },
+    starter.sections.recent_files(5, false, true),
+    starter.sections.recent_files(5, true, false),
+    starter.sections.sessions(),
+    starter.sections.pick(),
+    starter.sections.builtin_actions(),
+  },
+})
 
 now(function() require('mini.statusline').setup() end)
 
