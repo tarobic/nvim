@@ -150,6 +150,7 @@ nmap_leader('oS', '<Cmd>lua Config.insert_section()<CR>',  'Section insert')
 nmap_leader('ot', '<Cmd>lua MiniTrailspace.trim()<CR>',    'Trim trailspace')
 nmap_leader('oT', trailspace_toggle_command,               'Trailspace hl toggle')
 nmap_leader('oz', '<Cmd>lua MiniMisc.zoom()<CR>',          'Zoom toggle')
+nmap_leader("oc", "<Cmd>lua MiniExtra.pickers.colorschemes()<CR>", "Colorschemes")
 
 -- r is for 'R'
 -- - Mappings starting with `T` send commands to current neoterm buffer, so

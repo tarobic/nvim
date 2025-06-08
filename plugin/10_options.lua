@@ -34,7 +34,7 @@ end
 
 if vim.fn.has('nvim-0.11') == 1 then
   vim.o.completeopt = 'menuone,noselect,fuzzy' -- Use fuzzy matching for built-in completion
-  vim.o.winborder = 'double'                   -- Use double-line as default border
+  vim.o.winborder = 'rounded'                   -- Use double-line as default border
 end
 
 if vim.fn.has('nvim-0.12') == 1 then

@@ -14,7 +14,7 @@ now(function() vim.cmd('colorscheme minisummer') end)
 
 now(function()
   require('mini.basics').setup({
-    options = { basic = true },
+    options = { extra_ui = true, win_borders = "bold" },
     mappings = { windows = true, move_with_alt = true },
   })
 end)
@@ -61,6 +61,9 @@ starter.setup({
   },
   query_updaters = [[abcdefghilmoqrstuvwxyz0123456789_-,.ABCDEFGHIJKLMOQRSTUVWXYZ]],
   items = {
+    starter.sections.recent_files(5, false, true),
+    starter.sections.recent_files(5, true, false),
+    starter.sections.sessions(),
     { action = 'che', name = 'Health', section = 'Bonus' },
     {
       action = ':lua Snacks.lazygit()',
@@ -69,9 +72,6 @@ starter.setup({
     },
     { action = ':Typr', name = 'Typr', section = 'Bonus' },
     { action = ':TyprStats', name = 'Typr Stats', section = 'Bonus' },
-    starter.sections.recent_files(5, false, true),
-    starter.sections.recent_files(5, true, false),
-    starter.sections.sessions(),
     starter.sections.pick(),
     starter.sections.builtin_actions(),
   },
