@@ -61,6 +61,8 @@ nmap_leader('ef', '<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>', '
 nmap_leader('em', edit_config_file('20_mini.lua'),                             'Mini.nvim config')
 nmap_leader('eo', edit_config_file('10_options.lua'),                          'Options config')
 nmap_leader('ep', edit_config_file('21_plugins.lua'),                          'Plugins config')
+nmap_leader("ek", edit_config_file("11_mappings.lua"), "Keymaps config")
+nmap_leader("ea", edit_config_file("22_autocommands.lua"), "Autocommands config")
 nmap_leader('es', '<Cmd>lua MiniSessions.select()<CR>',                        'Sessions')
 nmap_leader('eq', '<Cmd>lua Config.toggle_quickfix()<CR>',                     'Quickfix')
 
@@ -206,4 +208,8 @@ local map_pick_core = function(keys, cwd, desc)
 end
 map_pick_core('vc', '',  'Core visits (all)')
 map_pick_core('vC', nil, 'Core visits (cwd)')
+
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("t", "<C-[>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("n", "<leader>w", "<C-w>", { desc = "Windows" })
 -- stylua: ignore end

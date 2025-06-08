@@ -196,3 +196,14 @@ end)
 --   add('scottmckendry/cyberdream.nvim')
 --   add('Shatur/neovim-ayu')
 -- end)
+
+now(
+  function()
+    add({
+      source = 'nvzone/typr',
+      depends = { 'nvzone/volt' },
+      opts = {},
+      cmd = { 'Typr', 'TyprStats' },
+    })
+  end
+)

@@ -7,8 +7,8 @@ add({ name = 'mini.nvim', checkout = 'HEAD' })
 
 -- Step one ===================================================================
 -- now(function() vim.cmd('colorscheme miniwinter') end)
-now(function() vim.cmd('colorscheme minispring') end)
--- now(function() vim.cmd('colorscheme minisummer') end)
+-- now(function() vim.cmd('colorscheme minispring') end)
+now(function() vim.cmd('colorscheme minisummer') end)
 -- now(function() vim.cmd('colorscheme miniautumn') end)
 -- now(function() vim.cmd('colorscheme minicyan') end)
 
