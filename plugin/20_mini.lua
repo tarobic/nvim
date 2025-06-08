@@ -165,7 +165,7 @@ end)
 
 later(function() require('mini.align').setup() end)
 
-later(function() require('mini.animate').setup({ scroll = { enable = false } }) end)
+later(function() require('mini.animate').setup({ cursor = { enable = false }, scroll = { enable = false } }) end)
 
 later(function() require('mini.bracketed').setup() end)
 
@@ -175,6 +175,9 @@ later(function()
   local miniclue = require('mini.clue')
   --stylua: ignore
   miniclue.setup({
+    window = {
+      delay = 0,
+    },
     clues = {
       Config.leader_group_clues,
       miniclue.gen_clues.builtin_completion(),
@@ -278,13 +281,13 @@ later(function() require('mini.indentscope').setup() end)
 
 later(function() require('mini.jump').setup() end)
 
-later(function()
-  local jump2d = require('mini.jump2d')
-  jump2d.setup({
-    spotter = jump2d.gen_pattern_spotter('[^%s%p]+'),
-    view = { dim = true, n_steps_ahead = 2 },
-  })
-end)
+-- later(function()
+--   local jump2d = require('mini.jump2d')
+--   jump2d.setup({
+--     spotter = jump2d.gen_pattern_spotter('[^%s%p]+'),
+--     view = { dim = true, n_steps_ahead = 2 },
+--   })
+-- end)
 
 later(function()
   local map_multistep = require('mini.keymap').map_multistep
